@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { FaRobot, FaUserMd, FaCalendarAlt, FaHistory, FaComments, FaPrescription } from 'react-icons/fa';
@@ -53,29 +53,40 @@ const PatientDashboard = () => {
         }
     ];
 
+    useEffect(() => {
+        if (!user) {
+            navigate('/login');
+        }
+    }, [user, navigate]);
+
+    if (!user) return null;
+
     return (
         <div className="patient-dashboard">
             <div className="dashboard-header">
                 <div>
-                    <h1>Welcome, {user?.name}</h1>
+                    <h1>Welcome, {user.name}</h1>
                     <p className="subtitle">Your Health Dashboard</p>
                 </div>
                 <button onClick={logout} className="logout-btn">Logout</button>
             </div>
 
             <div className="features-grid">
-                {features.map((feature, index) => (
-                    <div 
-                        key={index}
-                        className="feature-card"
-                        onClick={() => navigate(feature.path)}
-                        style={{ borderLeft: `4px solid ${feature.color}` }}
-                    >
-                        <feature.icon style={{ fontSize: '3rem', color: feature.color }} />
-                        <h3>{feature.title}</h3>
-                        <p>{feature.description}</p>
-                    </div>
-                ))}
+                {features.map((feature, index) => {
+                    const Icon = feature.icon;
+                    return (
+                        <div 
+                            key={index}
+                            className="feature-card"
+                            onClick={() => navigate(feature.path)}
+                            style={{ borderLeft: `4px solid ${feature.color}` }}
+                        >
+                            <Icon style={{ fontSize: '3rem', color: feature.color }} />
+                            <h3>{feature.title}</h3>
+                            <p>{feature.description}</p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

@@ -1,65 +1,1 @@
-.tech-stack-section {
-    padding: 4rem 2rem;
-    background: #0b1121;
-    overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.tech-marquee {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: 3rem auto 0;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.tech-track {
-    display: flex;
-    gap: 4rem;
-    width: max-content;
-    animation: scroll 30s linear infinite;
-}
-
-.tech-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-.tech-item:hover {
-    opacity: 1;
-    transform: translateY(-5px);
-    color: #38bdf8;
-}
-
-.tech-icon {
-    font-size: 3rem;
-    color: inherit;
-}
-
-.tech-item span {
-    font-size: 1rem;
-    color: #cbd5e1;
-    font-weight: 500;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@media (max-width: 768px) {
-    .tech-track {
-        gap: 2rem;
-    }
-    
-    .tech-icon {
-        font-size: 2.5rem;
-    }
-}
+.tech-stack-section {    padding: 4rem 2rem;    background: #0b1121;    overflow: hidden;    border-top: 1px solid rgba(255, 255, 255, 0.05);}.tech-marquee {    position: relative;    width: 100%;    max-width: 1000px;    margin: 3rem auto 0;    overflow: hidden;    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);}.tech-track {    display: flex;    gap: 4rem;    width: max-content;    animation: scroll 30s linear infinite;}.tech-item {    display: flex;    flex-direction: column;    align-items: center;    gap: 1rem;    opacity: 0.6;    transition: all 0.3s ease;    cursor: default;}.tech-item:hover {    opacity: 1;    transform: translateY(-5px);    color: #38bdf8;}.tech-icon {    font-size: 3rem;    color: inherit;}.tech-item span {    font-size: 1rem;    color: #cbd5e1;    font-weight: 500;}@keyframes scroll {    0% { transform: translateX(0); }    100% { transform: translateX(-50%); }}@media (max-width: 768px) {    .tech-track {        gap: 2rem;    }    .tech-icon {        font-size: 2.5rem;    }}

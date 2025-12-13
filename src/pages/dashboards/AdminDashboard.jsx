@@ -1,50 +1,1 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import './AdminDashboard.css';
-
-const AdminDashboard = () => {
-    const { user, logout } = useAuth();
-    const navigate = useNavigate();
-
-    return (
-        <div className="admin-dashboard">
-            <div className="dashboard-header">
-                <div>
-                    <h1>Welcome, {user?.name}</h1>
-                    <p className="subtitle">Admin Dashboard</p>
-                </div>
-                <button onClick={logout} className="logout-btn">Logout</button>
-            </div>
-
-            <div className="quick-actions">
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/users')}>
-                    <h3>👥 User Management</h3>
-                    <p>Manage patients, doctors, and health workers</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/analytics')}>
-                    <h3>📊 Analytics</h3>
-                    <p>View system metrics and performance</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/verification')}>
-                    <h3>✅ Doctor Verification</h3>
-                    <p>Review and approve doctor credentials</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/appointments')}>
-                    <h3>📅 Appointments</h3>
-                    <p>Oversee all platform appointments</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/messaging')}>
-                    <h3>💬 Messaging Monitor</h3>
-                    <p>Track messaging activity and compliance</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/admin/settings')}>
-                    <h3>⚙️ Settings</h3>
-                    <p>Configure platform preferences</p>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export default AdminDashboard;
+import React from 'react';import { useNavigate } from 'react-router-dom';import { useAuth } from '../../context/AuthContext';import './AdminDashboard.css';const AdminDashboard = () => {    const { user, logout } = useAuth();    const navigate = useNavigate();    return (        <div className="admin-dashboard">            <div className="dashboard-header">                <div>                    <h1>Welcome, {user?.name}</h1>                    <p className="subtitle">Admin Dashboard</p>                </div>                <button onClick={logout} className="logout-btn">Logout</button>            </div>            <div className="quick-actions">                <div className="action-card" onClick={() => navigate('/dashboard/admin/users')}>                    <h3>👥 User Management</h3>                    <p>Manage patients, doctors, and health workers</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/admin/analytics')}>                    <h3>📊 Analytics</h3>                    <p>View system metrics and performance</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/admin/verification')}>                    <h3>✅ Doctor Verification</h3>                    <p>Review and approve doctor credentials</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/admin/appointments')}>                    <h3>📅 Appointments</h3>                    <p>Oversee all platform appointments</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/admin/messaging')}>                    <h3>💬 Messaging Monitor</h3>                    <p>Track messaging activity and compliance</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/admin/settings')}>                    <h3>⚙️ Settings</h3>                    <p>Configure platform preferences</p>                </div>            </div>        </div>    );};export default AdminDashboard;

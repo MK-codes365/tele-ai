@@ -1,68 +1,1 @@
-import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { FaVideo, FaMicrophone, FaVideoSlash, FaMicrophoneSlash, FaPhoneSlash } from 'react-icons/fa';
-import './Teleconsultation.css';
-
-const Teleconsultation = () => {
-    const navigate = useNavigate();
-    const { id } = useParams();
-    const [videoEnabled, setVideoEnabled] = useState(true);
-    const [audioEnabled, setAudioEnabled] = useState(true);
-
-    const handleEndCall = () => {
-        if (confirm('End consultation?')) {
-            navigate('/dashboard/doctor');
-        }
-    };
-
-    return (
-        <div className="teleconsultation-container">
-            <div className="video-area">
-                <div className="main-video">
-                    <div className="video-placeholder">
-                        <p>📹 Patient Video Feed</p>
-                        <small>(WebRTC integration required)</small>
-                    </div>
-                </div>
-                <div className="self-video">
-                    <div className="video-placeholder-small">
-                        <p>Your Video</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="patient-sidebar">
-                <h3>Patient Information</h3>
-                <div className="patient-details">
-                    <p><strong>Case ID:</strong> {id}</p>
-                    <p><strong>Symptoms:</strong> Fever, Cough</p>
-                    <p><strong>Urgency:</strong> <span className="medium">MEDIUM</span></p>
-                </div>
-                <div className="quick-notes">
-                    <h4>Quick Notes</h4>
-                    <textarea placeholder="Type consultation notes..." rows="8"></textarea>
-                </div>
-            </div>
-
-            <div className="controls-bar">
-                <button
-                    className={`control-btn ${!videoEnabled ? 'disabled' : ''}`}
-                    onClick={() => setVideoEnabled(!videoEnabled)}
-                >
-                    {videoEnabled ? <FaVideo /> : <FaVideoSlash />}
-                </button>
-                <button
-                    className={`control-btn ${!audioEnabled ? 'disabled' : ''}`}
-                    onClick={() => setAudioEnabled(!audioEnabled)}
-                >
-                    {audioEnabled ? <FaMicrophone /> : <FaMicrophoneSlash />}
-                </button>
-                <button className="control-btn end-call" onClick={handleEndCall}>
-                    <FaPhoneSlash /> End Call
-                </button>
-            </div>
-        </div>
-    );
-};
-
-export default Teleconsultation;
+import React, { useState } from 'react';import { useNavigate, useParams } from 'react-router-dom';import { FaVideo, FaMicrophone, FaVideoSlash, FaMicrophoneSlash, FaPhoneSlash } from 'react-icons/fa';import './Teleconsultation.css';const Teleconsultation = () => {    const navigate = useNavigate();    const { id } = useParams();    const [videoEnabled, setVideoEnabled] = useState(true);    const [audioEnabled, setAudioEnabled] = useState(true);    const handleEndCall = () => {        if (confirm('End consultation?')) {            navigate('/dashboard/doctor');        }    };    return (        <div className="teleconsultation-container">            <div className="video-area">                <div className="main-video">                    <div className="video-placeholder">                        <p>📹 Patient Video Feed</p>                        <small>(WebRTC integration required)</small>                    </div>                </div>                <div className="self-video">                    <div className="video-placeholder-small">                        <p>Your Video</p>                    </div>                </div>            </div>            <div className="patient-sidebar">                <h3>Patient Information</h3>                <div className="patient-details">                    <p><strong>Case ID:</strong> {id}</p>                    <p><strong>Symptoms:</strong> Fever, Cough</p>                    <p><strong>Urgency:</strong> <span className="medium">MEDIUM</span></p>                </div>                <div className="quick-notes">                    <h4>Quick Notes</h4>                    <textarea placeholder="Type consultation notes..." rows="8"></textarea>                </div>            </div>            <div className="controls-bar">                <button                    className={`control-btn ${!videoEnabled ? 'disabled' : ''}`}                    onClick={() => setVideoEnabled(!videoEnabled)}                >                    {videoEnabled ? <FaVideo /> : <FaVideoSlash />}                </button>                <button                    className={`control-btn ${!audioEnabled ? 'disabled' : ''}`}                    onClick={() => setAudioEnabled(!audioEnabled)}                >                    {audioEnabled ? <FaMicrophone /> : <FaMicrophoneSlash />}                </button>                <button className="control-btn end-call" onClick={handleEndCall}>                    <FaPhoneSlash /> End Call                </button>            </div>        </div>    );};export default Teleconsultation;

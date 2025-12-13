@@ -1,42 +1,1 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import './HealthWorkerDashboard.css';
-
-const HealthWorkerDashboard = () => {
-    const { user, logout } = useAuth();
-    const navigate = useNavigate();
-
-    return (
-        <div className="worker-dashboard">
-            <div className="dashboard-header">
-                <div>
-                    <h1>Welcome, {user?.name}</h1>
-                    <p className="subtitle">Health Worker Dashboard</p>
-                </div>
-                <button onClick={logout} className="logout-btn">Logout</button>
-            </div>
-
-            <div className="quick-actions">
-                <div className="action-card" onClick={() => navigate('/dashboard/worker/register-patient')}>
-                    <h3>👤 Register Patient</h3>
-                    <p>Register new patients in the community</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/worker/submit-case')}>
-                    <h3>🩺 Submit Case</h3>
-                    <p>Upload vitals and symptoms for doctor review</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/worker/my-cases')}>
-                    <h3>📋 My Cases</h3>
-                    <p>Track submitted cases and feedback</p>
-                </div>
-                <div className="action-card" onClick={() => navigate('/dashboard/worker/messages')}>
-                    <h3>💬 Messages</h3>
-                    <p>Communicate with doctors</p>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export default HealthWorkerDashboard;
+import React from 'react';import { useNavigate } from 'react-router-dom';import { useAuth } from '../../context/AuthContext';import './HealthWorkerDashboard.css';const HealthWorkerDashboard = () => {    const { user, logout } = useAuth();    const navigate = useNavigate();    return (        <div className="worker-dashboard">            <div className="dashboard-header">                <div>                    <h1>Welcome, {user?.name}</h1>                    <p className="subtitle">Health Worker Dashboard</p>                </div>                <button onClick={logout} className="logout-btn">Logout</button>            </div>            <div className="quick-actions">                <div className="action-card" onClick={() => navigate('/dashboard/worker/register-patient')}>                    <h3>👤 Register Patient</h3>                    <p>Register new patients in the community</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/worker/submit-case')}>                    <h3>🩺 Submit Case</h3>                    <p>Upload vitals and symptoms for doctor review</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/worker/my-cases')}>                    <h3>📋 My Cases</h3>                    <p>Track submitted cases and feedback</p>                </div>                <div className="action-card" onClick={() => navigate('/dashboard/worker/messages')}>                    <h3>💬 Messages</h3>                    <p>Communicate with doctors</p>                </div>            </div>        </div>    );};export default HealthWorkerDashboard;

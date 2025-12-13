@@ -1,28 +1,1 @@
-import React from 'react';
-import { FaPlay } from 'react-icons/fa';
-import './DemoVideo.css';
-
-const DemoVideo = () => {
-    return (
-        <section className="demo-section">
-            <div className="container">
-                <div className="demo-header">
-                    <h2 className="section-title">See HealConnect in Action</h2>
-                    <p className="section-subtitle">Watch how a consultation typically takes less than 5 minutes.</p>
-                </div>
-                
-                <div className="video-wrapper">
-                    {/* Placeholder for video thumbnail - utilizing a gradient/pattern */}
-                    <div className="video-thumbnail">
-                        <div className="play-button">
-                            <FaPlay />
-                        </div>
-                        <div className="video-overlay"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default DemoVideo;
+import React from 'react';import { FaPlay } from 'react-icons/fa';import './DemoVideo.css';const DemoVideo = () => {    return (        <section className="demo-section">            <div className="container">                <div className="demo-header">                    <h2 className="section-title">See HealConnect in Action</h2>                    <p className="section-subtitle">Watch how a consultation typically takes less than 5 minutes.</p>                </div>                <div className="video-wrapper">                    {}                    <div className="video-thumbnail">                        <div className="play-button">                            <FaPlay />                        </div>                        <div className="video-overlay"></div>                    </div>                </div>            </div>        </section>    );};export default DemoVideo;
